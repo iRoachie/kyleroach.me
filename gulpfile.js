@@ -81,7 +81,7 @@ gulp.task('serve', ['build'], () => {
   gulp.watch('dist/scripts.js', ['jekyll-build']);
   gulp.watch('_site/**/*.js').on('change', browserSync.reload);
   gulp.watch('_site/*.html').on('change', browserSync.reload);
-  gulp.watch(['*.html', '_layouts/*.html', '_includes/*.html', '_posts/*', '*php', '_config.yml', 'assets/**/*'], ['jekyll-build', 'reload']);
+  gulp.watch(['*.html', '_layouts/*.html', '_includes/*.html', '_posts/*', '_config.yml', 'assets/**/*'], ['jekyll-build', 'reload']);
 });
 
 gulp.task('build', () => {

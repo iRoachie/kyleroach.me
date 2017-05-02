@@ -11,5 +11,12 @@
 // 3. Base
 @import 'base/base';
 
+// 4. Components
+@import 'components/button';
+
+// 5. Layout sections
+@import 'layout/hero';
+@import 'layout/nav';
+
 // 6. Page-specific styles
-@import 'pages/default'
+@import 'pages/default';

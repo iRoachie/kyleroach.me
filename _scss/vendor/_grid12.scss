@@ -223,7 +223,7 @@
 }
 @media (min-width: 1200px) {
     .container {
-        width: 1320px;
+        width: $grid-width;
         max-width: calc(100% - 30px);
     }
 }
