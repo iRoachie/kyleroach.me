@@ -27,6 +27,11 @@
   @include element(menu) {
     padding: 0;
     margin: 0;
+    text-align: right;
+
+    @include respond-to(small) {
+      text-align: unset;
+    }
   }
 
   @include element(item) {

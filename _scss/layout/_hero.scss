@@ -4,9 +4,8 @@
   background-size: cover;
   width: 100%;
   z-index: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  margin-top: -105px;
   background-position: right center;
   filter: saturate(20%) contrast(180%);
   display: flex;
@@ -14,8 +13,14 @@
   justify-content: center;
   color: #fff;
 
+  @include respond-to(xsmall) {
+    margin-top: -85px;
+  }
+
   .container {
-    padding: 0;
+    @include respond-to(small) {
+      padding: 0;
+    }
   }
 
   @include element(content) {
