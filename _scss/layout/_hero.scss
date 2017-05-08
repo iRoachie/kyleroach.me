@@ -10,16 +10,17 @@
   filter: saturate(20%) contrast(180%);
   display: flex;
   align-items: center;
-  justify-content: center;
   color: #fff;
 
   @include respond-to(xsmall) {
     margin-top: -85px;
   }
 
-  .container {
-    @include respond-to(small) {
-      padding: 0;
+  @include element(container) {
+    width: calc(100% - 30px);
+
+    @include respond-to(medium) {
+      width: $grid-width;
     }
   }
 
