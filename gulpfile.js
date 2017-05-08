@@ -72,8 +72,7 @@ gulp.task('serve', ['build'], () => {
   browserSync.init({
 		server: {
 			baseDir: '_site'
-		},
-    browser: 'Google Chrome'
+		}
 	});
 
   gulp.watch('_scss/**/*.scss', ['sass']);
