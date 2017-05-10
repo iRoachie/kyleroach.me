@@ -1,0 +1,31 @@
+.folio {
+  margin: 60px 0;
+  padding: 15px 0;
+
+  @include element(titles) {
+    text-align: center;
+  }
+
+  @include element(title) {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #888;
+    background: none;
+    padding: 6px 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 8px;
+    transition: 200ms ease-in-out;
+    font-family: 'Raleway', sans-serif;
+
+    &:hover {
+      color: #333;
+    }
+
+    @include modifier(active) {
+      border-color: #d3cfd0;
+    }
+  }
+}
