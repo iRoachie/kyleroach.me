@@ -1,2 +1,3 @@
 name: Kyle Roach
 baseurl: ""
+exclude: ['gulpfile.js', 'README.md', 'LICENSE', 'node_modules', 'package.json', 'yarn.lock']
