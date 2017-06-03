@@ -1,5 +1,5 @@
----
-layout: default
+--- 
+layout: default 
 ---
 
 <section class="hero">
@@ -28,9 +28,12 @@ layout: default
         <p class="about__headline">Design <span>interfaces.</span> Develop <span>experiences</span></p>
 
         <div class="about__content">
-          <p>A Web and Mobile Developer whose always interested in creating new things using the latest technologies on the web.</p>
-          
-          <p>My love for technology and design has led me into crafting user interfaces for web and mobile applications. The fields of web and mobile development are rapidly changing, and being a fast learner enables me to stay ahead of the curb.</p>
+          <p>A Web and Mobile Developer whose always interested in creating new things using the latest technologies on the
+            web.</p>
+
+          <p>My love for technology and design has led me into crafting user interfaces for web and mobile applications. The
+            fields of web and mobile development are rapidly changing, and being a fast learner enables me to stay ahead
+            of the curb.</p>
         </div>
       </div>
     </div>
@@ -40,8 +43,8 @@ layout: default
 <section class="folio">
   <div class="container">
     <div class="row">
-      <div class="folio__titles">
-        <button class="folio__title folio__title--active" data-category="all">
+      <header class="folio__titles">
+        <button class="folio__title" data-category="all">
           All
         </button>
         <button class="folio__title" data-category="web">
@@ -50,11 +53,22 @@ layout: default
         <button class="folio__title" data-category="mobile">
           Mobile
         </button>
-        <button class="folio__title" data-category="design">
-          Design
-        </button>
-      </div>
+      </header>
     </div>
+
+    <main class="folio__content">
+      {% for project in site.data.projects %}
+      <a href="{{project.url}}" class="folio-square" data-category="{{project.category}}">
+        <img src="{{project.image}}" alt="{{project.title}}">
+        <div class="folio-square__content">
+          <h3 class="folio-square__title">{{project.title}}</h3>
+          <div class="folio-square__tags">
+            {% for tag in project.tags %}
+            <span class="folio-square__tag">{{tag}}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </a> {% endfor %}
+    </main>
   </div>
 </section>
-
