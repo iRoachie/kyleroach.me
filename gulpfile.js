@@ -15,13 +15,13 @@ const $ = gulpLoadPlugins();
 const spawn = cp.spawn;
 let development = true;
 
-var messages = {
-    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
+const messages = {
+  jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
 
 gulp.task('jekyll-build', function (gulpCallBack){
     browserSync.notify(messages.jekyllBuild);
-    var jekyll = spawn('jekyll', ['build'], {stdio: 'inherit'});
+    const jekyll = spawn('jekyll', ['build'], {stdio: 'inherit'});
 
     jekyll.on('exit', function(code) {
         gulpCallBack(code === 0 ? null : `ERROR: Jekyll process exited with code: ${code}`);
@@ -66,7 +66,7 @@ gulp.task('scripts', () => {
 
 gulp.task('reload', () => {
   return browserSync.reload;
-})
+});
 
 gulp.task('serve', ['build'], () => {
   browserSync.init({
@@ -102,7 +102,7 @@ gulp.task('serve:production', ['production'], () => {
       baseDir: '_site'
     }
   });
-})
+});
 
 gulp.task('production', () => {
   development = false;

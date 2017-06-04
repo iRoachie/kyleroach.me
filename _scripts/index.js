@@ -1,36 +1,35 @@
-import $ from 'jquery'
-
 $(document).ready(() => {
   new KyleRoach()
-})
+});
 
 class KyleRoach {
   constructor() {
-    this.category = 'all'
-    this.initCategory()
-    this.selectCategory()
-  }
-
-  initCategory() {
-    $(`.folio__title[data-category=${this.category}]`).addClass('folio__title--active')
-    this.growSquares()
+    this.grid = '';
+    this.selectCategory();
+    this.initGrid()
   }
 
   selectCategory() {
-    $('.folio__title').click(e => {
-      $('.folio__title--active').removeClass('folio__title--active')
-      $(e.currentTarget).addClass('folio__title--active')
-      this.category = $(e.currentTarget).attr('data-category')
-      this.growSquares()
+    $('.folio__titles').on('click', '.folio__title', e => {
+      const title = $(e.currentTarget);
+      const filter = title.attr('data-filter');
+      this.grid.isotope({filter});
+
+      $('.folio__title--active').removeClass('folio__title--active');
+      title.addClass('folio__title--active');
     })
   }
 
-  growSquares() {
-    if (this.category === 'all') {
-      $('.folio-square').addClass('folio-square--visible')
-    } else {
-      $(`.folio-square:not([data-category=${this.category}])`).removeClass('folio-square--visible')
-      $(`.folio-square[data-category=${this.category}]`).addClass('folio-square--visible')
-    }
+  initGrid() {
+    this.grid = $('.folio__content').isotope({
+      itemSelector: '.folio-square',
+      getSortData: {
+        category: '[data-category]'
+      },
+      layoutMode: 'masonry',
+      masonry: {
+        isFitWidth: true
+      }
+    })
   }
 }

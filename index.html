@@ -44,13 +44,13 @@ layout: default
   <div class="container">
     <div class="row">
       <header class="folio__titles">
-        <button class="folio__title" data-category="all">
+        <button class="folio__title folio__title--active" data-filter="*">
           All
         </button>
-        <button class="folio__title" data-category="web">
+        <button class="folio__title" data-filter=".web">
           Web
         </button>
-        <button class="folio__title" data-category="mobile">
+        <button class="folio__title" data-filter=".mobile">
           Mobile
         </button>
       </header>
@@ -58,7 +58,7 @@ layout: default
 
     <main class="folio__content">
       {% for project in site.data.projects %}
-      <a href="{{project.url}}" class="folio-square" data-category="{{project.category}}">
+      <a href="{{project.url}}" class="folio-square {{project.category}}">
         <img src="{{project.image}}" alt="{{project.title}}">
         <div class="folio-square__content">
           <h3 class="folio-square__title">{{project.title}}</h3>

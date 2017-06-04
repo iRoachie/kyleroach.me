@@ -28,16 +28,8 @@
       border-color: #d3cfd0;
     }
   }
-  
-  @include element(content) {
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 316px;
-    justify-content: center;
 
-    @include respond-to(large) {
-      justify-content: flex-start;
-    }
+  @include element(content) {
+    margin: 30px auto 0;
   }
 }
