@@ -1,5 +1,12 @@
-.hero {
+.webp .hero {
+  background-image: url('../images/hero.webp');
+}
+
+.no-webp .hero {
   background-image: url('../images/hero.jpg');
+}
+
+.hero {
   height: 100vh;
   background-size: cover;
   width: 100%;
