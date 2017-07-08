@@ -19,6 +19,10 @@
   @include element(container) {
     width: calc(100% - 30px);
 
+    @include respond-to(small) {
+      width: 750px;
+    }
+
     @include respond-to(medium) {
       width: $grid-width;
     }

@@ -1,5 +1,12 @@
 .about {
+  height: 100vh;
+  display: flex;
+  align-items: center;
   margin: 80px 0;
+
+  @include respond-to(small) {
+    margin: 0;
+  }
 
   @include element(image) {
     max-width: 80%;
