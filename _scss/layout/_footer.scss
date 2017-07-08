@@ -1,0 +1,36 @@
+.footer {
+  background-color: $primary;
+  padding: 30px 0;
+
+  @include element(icon) {
+    color: #fff;
+    margin-right: 20px;
+    font-size: 24px;
+  }
+
+  @include element(icons) {
+    display: flex;
+    padding-bottom: 20px;
+
+    @include respond-to(small) {
+      justify-content: flex-end;
+    }
+  }
+
+  @include element(row) {
+    @include respond-to(small) {
+      display: flex;
+      justify-content: space-between; 
+    }
+  }
+
+  @include element(text) {
+    color: #fff;
+    font-size: 13px;
+  }
+
+  @include element(sep) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 15px;
+  }
+}

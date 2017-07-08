@@ -1,11 +1,12 @@
 {
-    "eslint.enable": false,
-    "files.exclude": {
-      "**/.git": true,
-      "**/.svn": true,
-      "**/.hg": true,
-      "**/CVS": true,
-      "**/.DS_Store": true,
-      ".vscode": true
-    }
-  }
+  "eslint.enable": false,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    ".vscode": true
+  },
+  "editor.formatOnSave": false
+}
