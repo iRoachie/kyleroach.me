@@ -1,75 +1,76 @@
 --- 
 layout: default 
 ---
-
-<section class="hero">
-  <div class="container hero__container">
-    <div class="row">
-      <div class="col-lg-6 col-sm-12 hero__content">
-        <h4 class="hero__pre">Hey There! I'm</h4>
-        <h1 class="hero__name">Kyle Roach</h1>
-        <p class="hero__text">Enthusiastic Developer with a Hint of Design<br>Creating. Learning. Ready</p>
-        <button class="button">learn more</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="about">
-  <div class="container">
-    <div class="row about__block">
-      <div class="col-md-6 about__image-block">
-        <img src="{{site.baseurl}}/images/portrait.png" alt="" class="about__image">
-      </div>
-
-      <div class="col-md-6">
-        <h1 class="about__title">Hey, I'm <span>Kyle</span></h1>
-
-        <p class="about__headline">Design <span>interfaces.</span> Develop <span>experiences</span></p>
-
-        <div class="about__content">
-          <p>A Web and React Native Developer whose always interested in creating new things using the latest technologies on
-            the web.
-          </p>
-
-          <p>My love for technology and design has led me into crafting user interfaces for web and mobile applications. The
-            fields of web and mobile development are rapidly changing, and being a fast learner enables me to stay ahead
-            of the curb.</p>
+<main class="page">
+  <section class="hero">
+    <div class="container hero__container">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 hero__content">
+          <h4 class="hero__pre">Hey There! I'm</h4>
+          <h1 class="hero__name">Kyle Roach</h1>
+          <p class="hero__text">Enthusiastic Developer with a Hint of Design<br>Creating. Learning. Ready</p>
+          <button class="button">learn more</button>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="folio">
-  <div class="container">
-    <div class="row">
-      <header class="folio__titles">
-        <button class="folio__title folio__title--active" data-filter="*">
-          All
-        </button>
-        <button class="folio__title" data-filter=".web">
-          Web
-        </button>
-        <button class="folio__title" data-filter=".mobile">
-          Mobile
-        </button>
-      </header>
-    </div>
+  <section class="about">
+    <div class="container">
+      <div class="row about__block">
+        <div class="col-md-6 about__image-block">
+          <img src="{{site.baseurl}}/images/portrait.png" alt="" class="about__image">
+        </div>
 
-    <main class="folio__content">
-      {% for project in site.data.projects %}
-      <a href="{{project.url}}" class="folio-square {{project.category}}">
-        <img src="{{project.image}}" alt="{{project.title}}">
-        <div class="folio-square__content">
-          <h3 class="folio-square__title">{{project.title}}</h3>
-          <div class="folio-square__tags">
-            {% for tag in project.tags %}
-            <span class="folio-square__tag">{{tag}}</span>
-            {% endfor %}
+        <div class="col-md-6">
+          <h1 class="about__title">Hey, I'm <span>Kyle</span></h1>
+
+          <p class="about__headline">Design <span>interfaces.</span> Develop <span>experiences</span></p>
+
+          <div class="about__content">
+            <p>A Web and React Native Developer whose always interested in creating new things using the latest technologies on
+              the web.
+            </p>
+
+            <p>My love for technology and design has led me into crafting user interfaces for web and mobile applications. The
+              fields of web and mobile development are rapidly changing, and being a fast learner enables me to stay ahead
+              of the curb.</p>
           </div>
         </div>
-      </a> {% endfor %}
-    </main>
-  </div>
-</section>
+      </div>
+    </div>
+  </section>
+
+  <section class="folio">
+    <div class="container">
+      <div class="row">
+        <header class="folio__titles">
+          <button class="folio__title folio__title--active" data-filter="*">
+            All
+          </button>
+          <button class="folio__title" data-filter=".web">
+            Web
+          </button>
+          <button class="folio__title" data-filter=".mobile">
+            Mobile
+          </button>
+        </header>
+      </div>
+
+      <main class="folio__content">
+        {% for project in site.data.projects %}
+        <a href="{{project.url}}" class="folio-square {{project.category}}">
+          <img src="{{project.image}}" alt="{{project.title}}">
+          <div class="folio-square__content">
+            <h3 class="folio-square__title">{{project.title}}</h3>
+            <div class="folio-square__tags">
+              {% for tag in project.tags %}
+              <span class="folio-square__tag">{{tag}}</span>
+              {% endfor %}
+            </div>
+          </div>
+        </a> {% endfor %}
+      </main>
+    </div>
+  </section>
+</main>
