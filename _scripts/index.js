@@ -53,7 +53,6 @@ class KyleRoach {
     fetch(`https://api.github.com/repos/${projectName}`)
     .then(res => res.json())
     .then(data => {
-      console.log(data)
       this.osProjects.append(`
         <div class="col-sm-6 col-md-4">
           <article class="os-project">
