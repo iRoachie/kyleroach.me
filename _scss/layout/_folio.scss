@@ -1,5 +1,6 @@
 .folio {
-  padding: 15px 0 120px;
+  padding: 40px 0 120px;
+  background: $primary;
 
   @include element(titles) {
     text-align: center;
@@ -9,7 +10,7 @@
     display: inline-block;
     text-transform: uppercase;
     font-weight: 700;
-    color: #888;
+    color: #fff;
     background: none;
     padding: 6px 10px;
     border: 2px solid transparent;
@@ -20,7 +21,7 @@
     font-family: 'Raleway', sans-serif;
 
     &:hover {
-      color: #333;
+      color: #fff
     }
 
     @include modifier(active) {
