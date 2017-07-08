@@ -28,9 +28,11 @@
     padding: 0;
     margin: 0;
     text-align: right;
+    display: none;
 
     @include respond-to(small) {
       text-align: unset;
+      display: block;
     }
   }
 
