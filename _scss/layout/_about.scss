@@ -3,13 +3,20 @@
   display: flex;
   align-items: center;
   margin: 80px 0;
+  flex-direction: column;
 
   @include respond-to(small) {
     margin: 0;
+    flex-direction: row;
   }
 
   @include element(image) {
+    width: 360px;
     max-width: 80%;
+
+    @include respond-to(small) {
+      min-width: 360px;
+    }
   }
 
   @include element(block) {
