@@ -3,6 +3,7 @@
  "short_name": "Kyle Roach",
  "theme_color": "#333",
  "display": "standalone",
+ "background_color": "#fff",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
