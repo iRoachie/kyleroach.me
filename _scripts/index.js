@@ -57,7 +57,7 @@ class KyleRoach {
         <div class="col-sm-6 col-md-4">
           <article class="os-project">
             <div>
-              <a href="${data.html_url}" target="_blank" class="os-project__title">${data.name}</a>
+              <a href="${data.html_url}" target="_blank" class="os-project__title" rel="noopener">${data.name}</a>
               <p class="os-project__desc">${data.description}</p>
             </div>
             <div class="os-project__stats">
