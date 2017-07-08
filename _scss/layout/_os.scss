@@ -1,0 +1,66 @@
+.os {
+  padding: 60px 0;
+
+  @include element(header) {
+    text-align: center;
+  }
+
+  @include element(title) {
+    font-family: 'Raleway';
+    text-transform: uppercase;
+    // font-size: 14px;
+    font-weight: 500;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  @include element(projects) {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.os-project {
+  padding: 8px;
+  margin: 4px;
+  border: 1px solid rgba($primary, 0.4);
+
+  p {
+    margin: 0;
+  }
+
+  @include element(title) {
+    color: $primary;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  @include element(desc) {
+    font-size: 12px;
+  }
+
+  @include element(stats) {
+    margin-top: 16px;
+    font-size: 12px;
+  }
+
+  @include element(language) {
+    color: #fff;
+    background: $primary;
+    border-radius: 2px;
+    padding: 2px 4px;
+  }
+
+  @include element(stars) {
+    color: $primary;
+    background: #ffd770;
+    border-radius: 2px;
+    padding: 2px 4px;
+  }
+}
