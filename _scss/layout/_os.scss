@@ -18,16 +18,24 @@
 
   @include element(projects) {
     margin-top: 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
   }
 }
 
 .os-project {
   padding: 8px;
   margin: 4px;
+  margin-bottom: 16px;
   border: 1px solid rgba($primary, 0.4);
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fafafa;
+  border-radius: 2px;
+
+  @include respond-to(medium) {
+    height: 130px;
+  }
 
   p {
     margin: 0;
@@ -46,7 +54,7 @@
   }
 
   @include element(stats) {
-    margin-top: 16px;
+    margin-top: 8px;
     font-size: 12px;
   }
 
@@ -55,12 +63,27 @@
     background: $primary;
     border-radius: 2px;
     padding: 2px 4px;
+    font-weight: 600;
+
+    &.typescript {
+      background: #2b7489;
+    }
+
+    &.objective-c {
+      background: #438eff;
+    }
+
+    &.javascript {
+      background: #f1e05a;
+      color: $primary;
+    }
   }
 
   @include element(stars) {
-    color: $primary;
-    background: #ffd770;
+    color: #fff;
+    background: $primary;
     border-radius: 2px;
     padding: 2px 4px;
+    font-weight: 600;
   }
 }
