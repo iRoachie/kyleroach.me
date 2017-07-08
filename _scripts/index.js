@@ -9,6 +9,7 @@ class KyleRoach {
     this.selectCategory()
     this.initGrid()
     this.fetchRepos()
+    this.loadIonicons()
   }
 
   selectCategory() {
@@ -47,6 +48,17 @@ class KyleRoach {
       'maxs15/react-native-modalbox'
     ]
     projects.map(repo => this.fetchRepo(repo))
+  }
+
+  loadIonicons() {
+    const src = 'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'
+
+    if (document.createStyleSheet){
+        document.createStyleSheet(src);
+    }
+    else {
+        $("head").append($("<link rel='stylesheet' href='"+src+"' type='text/css' media='screen' />"));
+    }
   }
 
   fetchRepo(projectName) {
