@@ -38,12 +38,12 @@ class KyleRoach {
 
   fetchRepos() {
     const projects = [
+      'react-native-training/react-native-elements',
       'iRoachie/react-native-material-tabs',
-      'cooperka/react-native-snackbar',
       'DefinitelyTyped/DefinitelyTyped',
+      'cooperka/react-native-snackbar',
       'xotahal/react-native-material-ui',
       'xinthink/react-native-material-kit',
-      '24ark/react-native-step-indicator',
       'hectahertz/react-native-material-dialog',
       'maxs15/react-native-modalbox'
     ]
@@ -74,11 +74,12 @@ class KyleRoach {
             </div>
             <div class="os-project__stats">
               <span class="os-project__language ${data.language.toLowerCase()}">${data.language}</span>
-              <span class="os-project__stars"><i class="ion-android-star"></i> ${data.stargazers_count}</span>
+              <span class="os-project__stars"><i class="ion-android-star"></i> ${data.stargazers_count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
             </div>
           </article>
         </div>
       `)
     })
+    .error(console.error)
   }
 }
