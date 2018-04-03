@@ -5,7 +5,7 @@
   flex-direction: column;
 
   @include respond-to(small) {
-    height: 100vh;
+    padding: 80px 0 40px;
     margin: 0;
     flex-direction: row;
   }

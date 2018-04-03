@@ -7,7 +7,8 @@
   "author": "Kyle Roach <kroach.work@gmail.com>",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
-    "deploy": "surge _site"
+    "deploy": "surge _site",
+    "start": "gulp serve"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
