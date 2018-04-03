@@ -39,6 +39,14 @@
     text-align: right;
     float: right;
     padding: 0;
+
+    @include respond-to(medium) {
+      padding: 0 15px;
+    }
+
+    @include respond-to(large) {
+      padding: 0;
+    }
   }
 
   @include element(pre) {
