@@ -63,7 +63,7 @@ layout: default
 
       <main class="folio__content">
         {% for project in site.data.projects %}
-        <a href="{{project.url}}" class="folio-square {{project.category}}">
+        <a href="{{project.url}}" class="folio-square {{project.category}}" target="_blank">
           <img src="{{project.image}}" alt="{{project.title}}">
           <div class="folio-square__content">
             <h3 class="folio-square__title">{{project.title}}</h3>

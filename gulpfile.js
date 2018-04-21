@@ -86,7 +86,8 @@ gulp.task('serve', ['build'], () => {
     '_includes/*.html', 
     '_posts/*', 
     '**/**/*.yml', 
-    'assets/**/*'
+    '_data/*', 
+    'images/**/*'
   ], ['jekyll-build', 'reload']);
 });
 
