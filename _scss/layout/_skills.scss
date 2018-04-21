@@ -1,0 +1,19 @@
+.skills {
+  padding: 40px 0 50px;
+  background: #e8e8e8;
+
+  @include element('blurb') {
+    margin-bottom: 3rem;
+  }
+}
+
+.skill {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 3rem;
+
+  @include element('name') {
+    font-size: 1.2rem;
+    color: #000;
+  }
+}
