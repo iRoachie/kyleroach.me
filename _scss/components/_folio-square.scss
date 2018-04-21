@@ -1,11 +1,19 @@
 .folio-square {
-  width: 300px;
-  height: 300px;
+  --square-size: 300px;
+  --square-small-size: 100px;
+
+  width: var(--square-small-size);
+  height: var(--square-small-size);
   position: relative;
   overflow: hidden;
   margin: 8px;
   background: #ffc0bc;
   float: left;
+
+  @include respond-to(small) {
+    width: var(--square-size);
+    height: var(--square-size);
+  }
 
   @include element(content) {
     opacity: 0;
@@ -46,7 +54,7 @@
     color: #fff;
     background: $primary;
     padding: 4px;
-    font-size: .75rem;
+    font-size: 0.75rem;
     font-family: $headingFont, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
