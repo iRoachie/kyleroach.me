@@ -10,7 +10,7 @@
   @include element(icon) {
     color: #fff;
     margin-right: 20px;
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   @include element(icons) {
@@ -31,7 +31,7 @@
 
   @include element(text) {
     color: #fff;
-    font-size: 13px;
+    font-size: .8rem;
   }
 
   @include element(sep) {

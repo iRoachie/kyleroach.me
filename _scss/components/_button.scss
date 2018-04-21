@@ -5,10 +5,11 @@
   padding: 10px 20px;
   color: #fff;  
   cursor: pointer;
-  font-family: 'Raleway';
+  font-family: $headingFont;
   font-weight: 700;
   letter-spacing: 2px;
   transition: 300ms ease-in-out;
+  font-size: .7rem;
 
   &:hover {
     background-color: $primary;
