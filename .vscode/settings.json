@@ -8,5 +8,5 @@
     "**/.DS_Store": true,
     ".vscode": true
   },
-  "editor.formatOnSave": false
+  "editor.formatOnSave": true
 }
