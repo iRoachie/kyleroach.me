@@ -21,7 +21,7 @@
     font-family: $headingFont, sans-serif;
 
     &:hover {
-      color: #fff
+      color: #fff;
     }
 
     @include modifier(active) {
@@ -31,5 +31,10 @@
 
   @include element(content) {
     margin: 30px auto 0;
+  }
+
+  @include element('blurb') {
+    color: #fff;
+    margin-bottom: 3rem;
   }
 }

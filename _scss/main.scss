@@ -4,6 +4,7 @@
 @import 'abstracts/variables';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
+@import 'abstracts/helpers';
 
 // 2. Vendors
 @import 'vendor/grid12';
@@ -14,6 +15,7 @@
 // 4. Components
 @import 'components/button';
 @import 'components/folio-square';
+@import 'components/mix-title';
 
 // 5. Layout sections
 @import 'layout/hero';
