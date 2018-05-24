@@ -1,6 +1,0 @@
-name: Kyle Roach
-baseurl: ""
-exclude: ['gulpfile.js', 'README.md', 'LICENSE', 'node_modules', 'package.json', 'yarn.lock']
-github: https://github.com/iRoachie
-twitter: https://twitter.com/roach_iam
-email: kroach.work@gmail.com

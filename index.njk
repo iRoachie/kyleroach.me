@@ -1,6 +1,9 @@
---- 
-layout: default 
----
+{# Layout #}
+{% extends "_layouts/default.njk" %}
+
+{# Content #}
+{% block main %}
+
 <main class="page">
   <section class="hero">
     <div class="hero__cover"></div>
@@ -21,8 +24,8 @@ layout: default
       <div class="row about__block">
         <div class="col-md-6 about__image-block">
           <picture class="about__image">
-            <source srcset="{{site.baseurl}}/images/portrait.webp" type="image/webp">
-            <img src="{{site.baseurl}}/images/portrait.png" alt="Kyle Roach">
+            <source srcset="{{baseurl}}/images/portrait.webp" type="image/webp">
+            <img src="{{baseurl}}/images/portrait.png" alt="Kyle Roach">
           </picture>
         </div>
 
@@ -175,18 +178,19 @@ layout: default
       </div>
 
       <main class="folio__content">
-        {% for project in site.data.projects %}
-        <a href="{{project.url}}" class="folio-square {{project.category}}" target="_blank">
-          <img src="{{project.image}}" alt="{{project.title}}" />
-          <div class="folio-square__content">
-            <h3 class="folio-square__title">{{project.title}}</h3>
-            <div class="folio-square__tags">
-              {% for tag in project.tags %}
-              <span class="folio-square__tag">{{tag}}</span>
-              {% endfor %}
+        {% for project in projects %}
+          <a href="{{project.url}}" class="folio-square {{project.category}}" target="_blank">
+            <img src="{{project.image}}" alt="{{project.title}}" />
+            <div class="folio-square__content">
+              <h3 class="folio-square__title">{{project.title}}</h3>
+              <div class="folio-square__tags">
+                {% for tag in project.tags %}
+                  <span class="folio-square__tag">{{tag}}</span>
+                {% endfor %}
+              </div>
             </div>
-          </div>
-        </a> {% endfor %}
+          </a> 
+        {% endfor %}
       </main>
     </div>
   </section>
@@ -208,3 +212,5 @@ layout: default
     </div>
   </section>
 </main>
+
+{% endblock %}

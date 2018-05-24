@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="description" content="Enthusiastic developer with knack for interface design. Creating. Learning. Ready">
+  <title>{{name}}</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="{{baseurl}}/images/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{baseurl}}/images/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{baseurl}}/images/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{baseurl}}/images/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{baseurl}}/images/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{baseurl}}/images/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{baseurl}}/images/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{baseurl}}/images/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{baseurl}}/images/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{baseurl}}/images/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{baseurl}}/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{baseurl}}/images/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{baseurl}}/images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="{{baseurl}}/images/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="{{baseurl}}/images/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300,400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="{{baseurl}}/styles/main.css">
+</head>
+
+<body>
+  {% include "_includes/navigation.njk" %}
+
+  {# Content #}
+  {% block main %}{% endblock %}
+  
+  {% include "_includes/footer.njk" %}
+
+  <script src="{{baseurl}}/js/index.js"></script>
+</body>
+
+</html>

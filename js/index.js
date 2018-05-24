@@ -1,3 +1,7 @@
+import './modernizr-custom';
+import Isotope from 'isotope-layout';
+import axios from 'axios';
+
 $(document).ready(() => {
   new KyleRoach();
 });
@@ -16,7 +20,7 @@ class KyleRoach {
     $('.folio__titles').on('click', '.folio__title', e => {
       const title = $(e.currentTarget);
       const filter = title.attr('data-filter');
-      this.grid.isotope({ filter });
+      this.grid.arrange({ filter });
 
       $('.folio__title--active').removeClass('folio__title--active');
       title.addClass('folio__title--active');
@@ -24,15 +28,17 @@ class KyleRoach {
   }
 
   initGrid() {
-    this.grid = $('.folio__content').isotope({
+    const grid = document.querySelector('.folio__content');
+
+    this.grid = new Isotope(grid, {
       itemSelector: '.folio-square',
       getSortData: {
-        category: '[data-category]'
+        category: '[data-category]',
       },
       layoutMode: 'masonry',
       masonry: {
-        isFitWidth: true
-      }
+        isFitWidth: true,
+      },
     });
   }
 
@@ -45,7 +51,7 @@ class KyleRoach {
       'xotahal/react-native-material-ui',
       'aksonov/react-native-tableview',
       'hectahertz/react-native-material-dialog',
-      'umhan35/react-native-search-bar'
+      'umhan35/react-native-search-bar',
     ];
     projects.map(repo => this.fetchRepo(repo));
   }
@@ -68,9 +74,9 @@ class KyleRoach {
   }
 
   fetchRepo(projectName) {
-    fetch(`https://api.github.com/repos/${projectName}`)
-      .then(res => res.json())
-      .then(data => {
+    axios
+      .get(`https://api.github.com/repos/${projectName}`)
+      .then(({ data }) => {
         this.osProjects.append(`
           <div class="col-sm-6 col-md-4">
             <article class="os-project">
