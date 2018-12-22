@@ -1,0 +1,20 @@
+:root {
+  --primary: #333;
+  --secondary: #e8e8e8;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
