@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { screens } from '../../tailwind';
 
 import Container from './Container';
 import image_jpg from '../images/hero.jpg';
@@ -55,7 +56,7 @@ const Cover = styled.div.attrs({
   background-color: rgba(51, 51, 51, 0.2);
   transition: 500ms ease-in-out;
 
-  @media (min-width: 1200px) {
+  @media (min-width: ${screens.xl}) {
     opacity: 0;
   }
 `;

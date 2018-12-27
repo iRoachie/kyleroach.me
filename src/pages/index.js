@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { screens } from '../../tailwind';
 
 import '../index.css';
 import '../main.css';
 
-import { Hero, Nav, Footer, Layout, SEO, About } from '../components';
+import { Hero, Nav, Footer, Layout, SEO, About, Skills } from '../components';
 
 const IndexPage = () => (
   <Layout>
@@ -14,6 +15,7 @@ const IndexPage = () => (
       <Nav />
       <Hero />
       <About />
+      <Skills />
     </Page>
 
     <Footer />
@@ -22,6 +24,10 @@ const IndexPage = () => (
 
 const Page = styled.main.attrs({ className: 'relative bg-white' })`
   margin-bottom: 12rem;
+
+  @media (min-width: ${screens.sm}) {
+    margin-bottom: 10rem;
+  }
 `;
 
 export default IndexPage;

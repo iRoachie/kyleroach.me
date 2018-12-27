@@ -36,7 +36,7 @@ export default () => (
         </FooterIcon>
       </div>
 
-      <hr className="mt-2 mb-6 sm:mb-4 sm:mt-0" />
+      <hr className="mt-0 mb-6 sm:mb-4 sm:mt-0" />
 
       <div className="sm:flex justify-between text-white">
         <FooterText>
@@ -56,7 +56,7 @@ const Footer = styled.footer.attrs({
 `;
 
 const FooterText = styled.p.attrs({
-  className: 'my-4',
+  className: 'my-2',
 })`
   font-size: 0.8rem;
 `;
