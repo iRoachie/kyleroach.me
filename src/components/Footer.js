@@ -68,11 +68,8 @@ export default () => (
 );
 
 const Footer = styled.footer.attrs({
-  className: 'py-8 fixed w-full pin-b pin-l',
-})`
-  background-color: var(--primary);
-  z-index: -10;
-`;
+  className: 'py-8 fixed w-full pin-b pin-l bg-primary z--1',
+})``;
 
 const FooterText = styled.p.attrs({
   className: 'my-2',

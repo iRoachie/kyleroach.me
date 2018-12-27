@@ -150,9 +150,9 @@ const Sub = styled.p.attrs({ className: 'mx-auto' })`
   }
 `;
 
-const Skills = styled.section.attrs({ className: 'pt-8 pb-4 text-center' })`
-  background-color: var(--secondary);
-`;
+const Skills = styled.section.attrs({
+  className: 'pt-8 pb-4 text-center bg-secondary',
+})``;
 
 const Grid = styled.div.attrs({ className: 'mt-16' })`
   display: grid;

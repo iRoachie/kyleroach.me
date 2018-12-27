@@ -126,6 +126,9 @@ let colors = {
   'pink-light': '#fa7ea8',
   'pink-lighter': '#ffbbca',
   'pink-lightest': '#ffebef',
+
+  primary: '#333',
+  secondary: '#e8e8e8',
 };
 
 module.exports = {
@@ -769,6 +772,7 @@ module.exports = {
 
   zIndex: {
     auto: 'auto',
+    '-1': -10,
     '0': 0,
     '10': 10,
     '20': 20,
