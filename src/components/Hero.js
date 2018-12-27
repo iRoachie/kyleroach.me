@@ -46,7 +46,7 @@ const Hero = styled.section.attrs({
 `;
 
 const Content = styled(Container).attrs({
-  className: 'flex flex-col items-end z-20 mr-0 sm:mr-auto',
+  className: 'flex flex-col items-end z-20 mr-0 md:mr-auto',
 })``;
 
 const Cover = styled.div.attrs({
@@ -74,7 +74,7 @@ const Name = styled.h1.attrs({
 `;
 
 const Blurb = styled.p.attrs({
-  className: 'text-right mb-12',
+  className: 'text-right mb-12 mt-0',
 })`
   line-height: 1.5rem;
 `;

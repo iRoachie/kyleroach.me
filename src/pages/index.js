@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import '../index.css';
 import '../main.css';
 
-import { Hero, Nav, Footer, Layout, SEO, Container } from '../components';
+import { Hero, Nav, Footer, Layout, SEO, About } from '../components';
 
 const IndexPage = () => (
   <Layout>
@@ -13,12 +13,7 @@ const IndexPage = () => (
     <Page>
       <Nav />
       <Hero />
-
-      <Container>
-        <h1>Hi people</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-      </Container>
+      <About />
     </Page>
 
     <Footer />

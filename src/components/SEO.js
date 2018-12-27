@@ -20,7 +20,7 @@ function SEO({ description, lang, meta, keywords, title }) {
             link={[
               {
                 href:
-                  'https://fonts.googleapis.com/css?family=Open+Sans|Raleway:600,700',
+                  'https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300,600,700',
                 rel: 'stylesheet',
                 async: true,
                 defer: true,
