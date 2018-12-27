@@ -5,9 +5,18 @@ import { screens } from '../../tailwind';
 import '../index.css';
 import '../main.css';
 
-import { Hero, Nav, Footer, Layout, SEO, About, Skills } from '../components';
+import {
+  Hero,
+  Nav,
+  Footer,
+  Layout,
+  SEO,
+  About,
+  Skills,
+  Portfolio,
+} from '../components';
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
@@ -16,6 +25,7 @@ const IndexPage = () => (
       <Hero />
       <About />
       <Skills />
+      <Portfolio projects={data.allContentfulProject.edges} />
     </Page>
 
     <Footer />
@@ -27,6 +37,28 @@ const Page = styled.main.attrs({ className: 'relative bg-white' })`
 
   @media (min-width: ${screens.sm}) {
     margin-bottom: 10rem;
+  }
+`;
+
+export const pageQuery = graphql`
+  query Projects {
+    allContentfulProject {
+      edges {
+        node {
+          id
+          title
+          thumbnail {
+            fluid(maxWidth: 300, maxHeight: 300) {
+              ...GatsbyContentfulFluid
+            }
+          }
+          tags {
+            id
+            name
+          }
+        }
+      }
+    }
   }
 `;
 

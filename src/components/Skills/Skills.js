@@ -145,7 +145,7 @@ const Title = styled.h2.attrs({
 `;
 
 const Sub = styled.p.attrs({ className: 'mx-auto' })`
-  @media (min-width: ${screens.md}) {
+  @media (min-width: ${screens.lg}) {
     max-width: 66%;
   }
 `;
