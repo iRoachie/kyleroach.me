@@ -127,8 +127,8 @@ let colors = {
   'pink-lighter': '#ffbbca',
   'pink-lightest': '#ffebef',
 
-  primary: '#333',
-  secondary: '#e8e8e8',
+  primary: 'var(--primary)',
+  secondary: 'var(--secondary)',
 };
 
 module.exports = {
