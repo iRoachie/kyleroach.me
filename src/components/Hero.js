@@ -47,8 +47,14 @@ const Hero = styled.section.attrs({
 `;
 
 const Content = styled(Container).attrs({
-  className: 'flex flex-col items-end z-20 mr-0 md:mr-auto',
-})``;
+  className: 'flex flex-col items-end z-20',
+})`
+  margin-right: 0;
+
+  @media (min-width: ${screens.md}) {
+    margin-right: auto;
+  }
+`;
 
 const Cover = styled.div.attrs({
   className: 'absolute w-full h-full pin-t pin-l z-10',
