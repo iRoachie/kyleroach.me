@@ -5,7 +5,9 @@ import thousands from 'thousands';
 const Repo = ({ repo }) => (
   <Content>
     <header>
-      <Name href={repo.url}>{repo.name}</Name>
+      <Name href={repo.url} target="_blank" rel="noopener">
+        {repo.name}
+      </Name>
       <Description>{repo.description}</Description>
     </header>
 
