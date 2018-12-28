@@ -3,13 +3,17 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 import Container from './Container';
-import logoURL from '../images/logo.jpg';
+import logoJPG from '../images/logo.jpg';
+import logoWebp from '../images/logo.webp';
 
 export default () => (
   <Nav>
     <Container className="mx-auto py-4 flex justify-between items-center">
       <Link to="/">
-        <Logo src={logoURL} />
+        <Logo>
+          <source srcSet={logoWebp} type="image/webp" />
+          <img src={logoJPG} alt="Kyle Roach" />
+        </Logo>
       </Link>
 
       <Menu>
@@ -34,9 +38,11 @@ const Nav = styled.nav.attrs({
   className: 'z-10 relative',
 })``;
 
-const Logo = styled.img`
-  height: 40px;
-  width: 140px;
+const Logo = styled.picture`
+  img {
+    height: 40px;
+    width: 140px;
+  }
 `;
 
 const Menu = styled.ul.attrs({
