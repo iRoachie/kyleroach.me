@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { screens } from '../../../tailwind';
 
-import Container from '../Container';
+import { Container } from '../styles';
 import FolioSquare from './FolioSquare';
 
 class Portfolio extends React.Component {

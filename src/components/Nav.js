@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { Link as ScrollLink } from 'react-scroll';
 
-import Container from './Container';
+import { Container } from './styles';
 import logoJPG from '../images/logo.jpg';
 import logoWebp from '../images/logo.webp';
 
-export default () => (
-  <Nav>
+const Nav = () => (
+  <Section>
     <Container className="mx-auto py-4 flex justify-between items-center">
       <Link to="/">
         <Logo>
@@ -31,14 +31,14 @@ export default () => (
           <NavLink to="projects">Projects</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink>Contact</NavLink>
+          <NavLink to="top">Contact</NavLink>
         </NavItem>
       </Menu>
     </Container>
-  </Nav>
+  </Section>
 );
 
-const Nav = styled.nav.attrs({
+const Section = styled.nav.attrs({
   className: 'z-10 relative',
 })``;
 
@@ -69,3 +69,5 @@ const NavLink = styled(ScrollLink).attrs({
     color: #fff;
   }
 `;
+
+export default Nav;

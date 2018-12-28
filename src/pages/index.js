@@ -1,6 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-import { screens } from '../../tailwind';
 import { graphql } from 'gatsby';
 import { Element } from 'react-scroll';
 
@@ -17,6 +15,7 @@ import {
   Skills,
   Portfolio,
   OSS,
+  Page,
 } from '../components';
 
 const IndexPage = ({ data }) => (
@@ -24,8 +23,10 @@ const IndexPage = ({ data }) => (
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
     <Page>
-      <Nav />
-      <Hero />
+      <Element name="top">
+        <Nav />
+        <Hero />
+      </Element>
 
       <Element name="about">
         <About />
@@ -45,14 +46,6 @@ const IndexPage = ({ data }) => (
     <Footer />
   </Layout>
 );
-
-const Page = styled.main.attrs({ className: 'relative bg-white' })`
-  margin-bottom: 12rem;
-
-  @media (min-width: ${screens.sm}) {
-    margin-bottom: 10rem;
-  }
-`;
 
 export const pageQuery = graphql`
   {

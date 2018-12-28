@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { screens } from '../../../tailwind';
 
-import Container from '../Container';
+import { Container } from '../styles';
 import Skill from './Skill';
 
-export default () => (
-  <Skills>
+const Skills = () => (
+  <Section>
     <Container>
       <Title>
         My <span>Skills</span>
@@ -133,7 +133,7 @@ export default () => (
         </Skill>
       </Grid>
     </Container>
-  </Skills>
+  </Section>
 );
 
 const Title = styled.h2.attrs({
@@ -150,7 +150,7 @@ const Sub = styled.p.attrs({ className: 'mx-auto' })`
   }
 `;
 
-const Skills = styled.section.attrs({
+const Section = styled.section.attrs({
   className: 'pt-8 pb-4 text-center bg-secondary',
 })``;
 
@@ -162,3 +162,5 @@ const Grid = styled.div.attrs({ className: 'mt-16' })`
     grid-template-columns: 1fr 1fr 1fr;
   }
 `;
+
+export default Skills;

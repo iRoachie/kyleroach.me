@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Container from '../Container';
+import { Container } from '../styles';
 import { screens } from '../../../tailwind';
 
 import Repo from './Repo';
 
 const OSS = ({ repos }) => (
-  <Content>
+  <Section>
     <Container>
       <Title>
         Open <span>Source</span>
@@ -29,10 +29,10 @@ const OSS = ({ repos }) => (
         ))}
       </Grid>
     </Container>
-  </Content>
+  </Section>
 );
 
-const Content = styled.section.attrs({
+const Section = styled.section.attrs({
   className: 'pt-8 pb-16 text-center bg-white',
 })``;
 

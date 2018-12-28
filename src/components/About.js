@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Container from './Container';
+import { Container } from './styles';
 import portraitPng from '../images/portrait.png';
 import portraitWebp from '../images/portrait.webp';
 
-export default () => (
-  <About>
+const About = () => (
+  <Section>
     <AboutContainer>
       <PortaitContent>
         <Portrait>
@@ -37,10 +37,10 @@ export default () => (
         </p>
       </Content>
     </AboutContainer>
-  </About>
+  </Section>
 );
 
-const About = styled.section.attrs({ className: 'pt-16 pb-4' })``;
+const Section = styled.section.attrs({ className: 'pt-16 pb-4' })``;
 
 const AboutContainer = styled(Container).attrs({
   className: 'md:flex',
@@ -72,3 +72,5 @@ const Title = styled.h2.attrs({
     font-weight: 600;
   }
 `;
+
+export default About;

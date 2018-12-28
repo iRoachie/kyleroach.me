@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Container from './Container';
+import { Container } from './styles';
 
-export default () => (
-  <Footer>
+const Footer = () => (
+  <Section>
     <Container>
       <div className="pb-4 flex sm:justify-end">
         <FooterIcon
@@ -73,10 +73,10 @@ export default () => (
         <FooterText>Design interfaces. Develop experiences</FooterText>
       </div>
     </Container>
-  </Footer>
+  </Section>
 );
 
-const Footer = styled.footer.attrs({
+const Section = styled.footer.attrs({
   className: 'py-8 fixed w-full pin-b pin-l bg-primary z--1',
 })``;
 
@@ -102,3 +102,5 @@ const FooterIcon = styled.a.attrs({
     transform: rotateX(-360deg) rotateZ(20deg) scale(1.3);
   }
 `;
+
+export default Footer;

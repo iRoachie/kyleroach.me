@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { screens } from '../../tailwind';
 import { Link } from 'react-scroll';
 
-import Container from './Container';
+import { Container } from './styles';
 import image_jpg from '../images/hero.jpg';
 import image_webp from '../images/hero.webp';
 
-export default () => (
-  <Hero>
+const Hero = () => (
+  <Section>
     <Cover />
 
     <Content>
@@ -24,10 +24,10 @@ export default () => (
         learn more
       </Button>
     </Content>
-  </Hero>
+  </Section>
 );
 
-const Hero = styled.section.attrs({
+const Section = styled.section.attrs({
   className: 'w-full z-0 relative flex justify-end text-white',
 })`
   background-size: cover;
@@ -104,3 +104,5 @@ const Button = styled(Link).attrs({
     border-color: var(--primary);
   }
 `;
+
+export default Hero;
