@@ -60,7 +60,7 @@ const Container = styled(Link).attrs({
 `;
 
 const Title = styled.h3.attrs({
-  className: 'text-white font-bold mb-2 text-xl',
+  className: 'text-white font-semibold mb-2 text-xl',
 })``;
 
 const Tag = styled.span.attrs({

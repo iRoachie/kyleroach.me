@@ -38,7 +38,7 @@ const Content = styled.article.attrs({
 `;
 
 const Name = styled.a.attrs({
-  className: 'font-bold text-black',
+  className: 'font-semibold text-black',
 })``;
 
 const Description = styled.p.attrs({
@@ -50,7 +50,7 @@ const Meta = styled.footer.attrs({
 })``;
 
 const Language = styled.span.attrs({
-  className: 'text-xs font-bold px-2 py-1 rounded inline-block',
+  className: 'text-xs font-semibold px-2 py-1 rounded inline-block',
 })`
   background-color: ${({ language, color }) =>
     assignBackgroudColor(language, color)};
@@ -79,7 +79,7 @@ const assignBackgroudColor = (language, color) => {
 
 const Stars = styled.span.attrs({
   className:
-    'ml-1 bg-primary text-white font-bold rounded text-xs px-1 py-1 rounded inline-flex items-center',
+    'ml-1 bg-primary text-white font-semibold rounded text-xs px-1 py-1 rounded inline-flex items-center',
 })`
   svg {
     height: 14px;
