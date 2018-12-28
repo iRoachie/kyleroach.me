@@ -7,5 +7,17 @@ import Container from './Container';
 import About from './About';
 import Skills from './Skills';
 import Portfolio from './Portfolio';
+import OSS from './OSS';
 
-export { Container, Hero, Nav, Footer, Layout, SEO, About, Skills, Portfolio };
+export {
+  Container,
+  Hero,
+  Nav,
+  Footer,
+  Layout,
+  SEO,
+  About,
+  Skills,
+  Portfolio,
+  OSS,
+};

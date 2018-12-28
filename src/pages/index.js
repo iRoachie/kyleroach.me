@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { screens } from '../../tailwind';
+import { graphql } from 'gatsby';
 
 import '../index.css';
 import '../main.css';
@@ -14,6 +15,7 @@ import {
   About,
   Skills,
   Portfolio,
+  OSS,
 } from '../components';
 
 const IndexPage = ({ data }) => (
@@ -26,6 +28,7 @@ const IndexPage = ({ data }) => (
       <About />
       <Skills />
       <Portfolio projects={data.allContentfulProject.edges} />
+      <OSS repos={Object.values(data.github)} />
     </Page>
 
     <Footer />
@@ -41,7 +44,7 @@ const Page = styled.main.attrs({ className: 'relative bg-white' })`
 `;
 
 export const pageQuery = graphql`
-  query Projects {
+  {
     allContentfulProject {
       edges {
         node {
@@ -58,6 +61,43 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+    github {
+      a: repository(
+        owner: "react-native-training"
+        name: "react-native-elements"
+      ) {
+        ...Info
+      }
+      b: repository(owner: "DefinitelyTyped", name: "DefinitelyTyped") {
+        ...Info
+      }
+      c: repository(owner: "iRoachie", name: "react-native-material-tabs") {
+        ...Info
+      }
+      d: repository(owner: "oblador", name: "react-native-collapsible") {
+        ...Info
+      }
+      e: repository(owner: "aksonov", name: "react-native-tableview") {
+        ...Info
+      }
+      f: repository(owner: "umhan35", name: "react-native-search-bar") {
+        ...Info
+      }
+    }
+  }
+
+  fragment Info on GitHub_Repository {
+    id
+    name
+    description
+    stargazers {
+      totalCount
+    }
+    url
+    primaryLanguage {
+      name
+      color
     }
   }
 `;
