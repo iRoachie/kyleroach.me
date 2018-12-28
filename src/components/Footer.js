@@ -80,6 +80,7 @@ const FooterText = styled.p.attrs({
 const FooterIcon = styled.a.attrs({
   className: 'mr-4',
   target: '_blank',
+  rel: 'noopener',
 })`
   svg {
     width: auto;
