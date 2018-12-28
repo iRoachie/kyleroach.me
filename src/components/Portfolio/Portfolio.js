@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Isotope from 'isotope-layout';
 import { screens } from '../../../tailwind';
 
 import Container from '../Container';
@@ -13,7 +12,20 @@ class Portfolio extends React.Component {
   };
 
   componentDidMount() {
-    this.initGrid();
+    import('isotope-layout/js/isotope').then(Isotope => {
+      const grid = document.querySelector('.folio-content');
+
+      this.grid = new Isotope.default(grid, {
+        itemSelector: '.folio-square',
+        getSortData: {
+          category: '[data-category]',
+        },
+        layoutMode: 'masonry',
+        masonry: {
+          isFitWidth: true,
+        },
+      });
+    });
   }
 
   makeActive = a => {
@@ -21,21 +33,6 @@ class Portfolio extends React.Component {
 
     this.setState({ active: a });
     this.grid.arrange({ filter });
-  };
-
-  initGrid = () => {
-    const grid = document.querySelector('.folio-content');
-
-    this.grid = new Isotope(grid, {
-      itemSelector: '.folio-square',
-      getSortData: {
-        category: '[data-category]',
-      },
-      layoutMode: 'masonry',
-      masonry: {
-        isFitWidth: true,
-      },
-    });
   };
 
   render() {
