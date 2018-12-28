@@ -52,9 +52,30 @@ const Meta = styled.footer.attrs({
 const Language = styled.span.attrs({
   className: 'text-xs font-bold px-2 py-1 rounded inline-block',
 })`
-  background-color: ${({ color }) => color};
-  color: ${({ language }) => (language === 'JavaScript' ? '#000' : '#fff')};
+  background-color: ${({ language, color }) =>
+    assignBackgroudColor(language, color)};
+  color: ${({ language }) => assignColor(language)};
 `;
+
+const assignColor = language => {
+  switch (language) {
+    case 'JavaScript':
+      return '#000';
+    case 'Objective-C':
+      return '#0366d6';
+    default:
+      return '#fff';
+  }
+};
+
+const assignBackgroudColor = (language, color) => {
+  switch (language) {
+    case 'Objective-C':
+      return '#f1f8ff';
+    default:
+      return color;
+  }
+};
 
 const Stars = styled.span.attrs({
   className:
