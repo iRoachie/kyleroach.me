@@ -79,7 +79,7 @@ class Portfolio extends React.Component {
 }
 
 const Content = styled.section.attrs({
-  className: 'pt-8 pb-4 text-center text-white bg-primary',
+  className: 'pt-8 pb-16 text-center text-white bg-primary',
 })``;
 
 const Title = styled.h2.attrs({
