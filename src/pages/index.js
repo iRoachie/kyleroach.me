@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { screens } from '../../tailwind';
 import { graphql } from 'gatsby';
+import { Element } from 'react-scroll';
 
 import '../index.css';
 import '../main.css';
@@ -25,9 +26,19 @@ const IndexPage = ({ data }) => (
     <Page>
       <Nav />
       <Hero />
-      <About />
-      <Skills />
-      <Portfolio projects={data.allContentfulProject.edges} />
+
+      <Element name="about">
+        <About />
+      </Element>
+
+      <Element name="skills">
+        <Skills />
+      </Element>
+
+      <Element name="projects">
+        <Portfolio projects={data.allContentfulProject.edges} />
+      </Element>
+
       <OSS repos={Object.values(data.github)} />
     </Page>
 

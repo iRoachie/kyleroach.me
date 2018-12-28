@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { Link as ScrollLink } from 'react-scroll';
 
 import Container from './Container';
 import logoJPG from '../images/logo.jpg';
@@ -18,13 +19,16 @@ export default () => (
 
       <Menu>
         <NavItem>
-          <NavLink>Home</NavLink>
+          <NavLink to="top">Home</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink>About</NavLink>
+          <NavLink to="about">About</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink>Projects</NavLink>
+          <NavLink to="skills">Skills</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="projects">Projects</NavLink>
         </NavItem>
         <NavItem>
           <NavLink>Contact</NavLink>
@@ -53,8 +57,10 @@ const NavItem = styled.li.attrs({
   className: 'inline-block ml-4',
 })``;
 
-const NavLink = styled.button.attrs({
-  className: 'uppercase text-sm font-bold font-heading',
+const NavLink = styled(ScrollLink).attrs({
+  className: 'uppercase text-sm font-bold font-heading cursor-pointer',
+  smooth: true,
+  duration: 300,
 })`
   transition: color 300ms ease-in-out;
   color: var(--primary);

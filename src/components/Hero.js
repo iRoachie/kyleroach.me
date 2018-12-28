@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { screens } from '../../tailwind';
+import { Link } from 'react-scroll';
 
 import Container from './Container';
 import image_jpg from '../images/hero.jpg';
@@ -19,7 +20,9 @@ export default () => (
         Creating. Learning. Ready
       </Blurb>
 
-      <Button>learn more</Button>
+      <Button to="about" smooth duration={300}>
+        learn more
+      </Button>
     </Content>
   </Hero>
 );
@@ -86,7 +89,7 @@ const Blurb = styled.p.attrs({
   line-height: 1.5rem;
 `;
 
-const Button = styled.button.attrs({
+const Button = styled(Link).attrs({
   className:
     'uppercase text-white font-heading text-xs font-bold cursor-pointer',
 })`
