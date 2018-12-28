@@ -20,7 +20,10 @@ import {
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO
+      title="Home"
+      keywords={[`kyle`, `roach`, `barbados`, `developer`, `gatsby`, `react`]}
+    />
 
     <Page>
       <Element name="top">
