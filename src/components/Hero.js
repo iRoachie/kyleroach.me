@@ -96,7 +96,7 @@ const Button = styled(Link).attrs({
   padding: 10px 20px;
   letter-spacing: 2px;
   border: 2px solid #fff;
-  transition: 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
 
   &:hover {
     background: #000;
