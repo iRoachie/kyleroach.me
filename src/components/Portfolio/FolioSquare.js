@@ -33,12 +33,22 @@ const Cover = styled.div.attrs({
   left: 0.75rem;
   width: calc(100% - 1.5rem);
   height: calc(100% - 1.5rem);
+
+  .touchevents & {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
 `;
 
 const Content = styled.div`
   transition: 200ms ease-in;
   opacity: 0;
   transform: translateY(10px);
+
+  .touchevents & {
+    opacity: 1;
+    transform: translateY(0);
+  }
 `;
 
 const Container = styled(Link).attrs({
