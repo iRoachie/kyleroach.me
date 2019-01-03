@@ -37,6 +37,7 @@
     "format": "prettier --write \"src/**/*.js\""
   },
   "devDependencies": {
+    "gatsby-plugin-styled-components": "^3.0.4",
     "prettier": "^1.15.2",
     "purgecss": "^1.1.0",
     "tailwindcss": "^0.7.3"
