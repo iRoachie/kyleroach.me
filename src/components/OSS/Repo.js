@@ -5,7 +5,7 @@ import thousands from 'thousands';
 const Repo = ({ repo }) => (
   <Content>
     <header>
-      <Name href={repo.url} target="_blank" rel="noopener">
+      <Name href={repo.url} target="_blank" rel="noopener noreferrer">
         {repo.name}
       </Name>
       <Description>{repo.description}</Description>
@@ -44,7 +44,7 @@ const Name = styled.a.attrs({
 })``;
 
 const Description = styled.p.attrs({
-  className: 'text-xs',
+  className: 'text-xs mt-0',
 })``;
 
 const Meta = styled.footer.attrs({
@@ -55,7 +55,7 @@ const Language = styled.span.attrs({
   className: 'text-xs font-semibold px-2 py-1 rounded inline-block',
 })`
   background-color: ${({ language, color }) =>
-    assignBackgroudColor(language, color)};
+    assignBackgroundColor(language, color)};
   color: ${({ language }) => assignColor(language)};
 `;
 
@@ -70,7 +70,7 @@ const assignColor = language => {
   }
 };
 
-const assignBackgroudColor = (language, color) => {
+const assignBackgroundColor = (language, color) => {
   switch (language) {
     case 'Objective-C':
       return '#f1f8ff';

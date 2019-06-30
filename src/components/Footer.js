@@ -77,7 +77,7 @@ const Footer = () => (
 );
 
 const Section = styled.footer.attrs({
-  className: 'py-8 fixed w-full pin-b pin-l bg-primary z--1',
+  className: 'py-8 fixed w-full bottom-0 left-0 bg-primary -z-1',
 })``;
 
 const FooterText = styled.p.attrs({
@@ -89,7 +89,7 @@ const FooterText = styled.p.attrs({
 const FooterIcon = styled.a.attrs({
   className: 'mr-4',
   target: '_blank',
-  rel: 'noopener',
+  rel: 'noopener noreferrer',
 })`
   svg {
     width: auto;

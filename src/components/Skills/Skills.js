@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { screens } from '../../../tailwind';
+import { screens } from 'tailwindcss/defaultTheme';
 
 import { Container } from '../styles';
 import Skill from './Skill';
@@ -137,18 +137,14 @@ const Skills = () => (
 );
 
 const Title = styled.h2.attrs({
-  className: 'my-4 font-light uppercase',
+  className: 'text-2xl my-4 font-light uppercase',
 })`
   span {
     font-weight: 600;
   }
 `;
 
-const Sub = styled.p.attrs({ className: 'mx-auto' })`
-  @media (min-width: ${screens.lg}) {
-    max-width: 66%;
-  }
-`;
+const Sub = styled.p.attrs({ className: 'mx-auto lg:w-2/3' })``;
 
 const Section = styled.section.attrs({
   className: 'pt-8 pb-4 text-center bg-secondary',

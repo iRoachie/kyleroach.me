@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Container } from '../styles';
-import { screens } from '../../../tailwind';
+import { screens } from 'tailwindcss/defaultTheme';
 
 import Repo from './Repo';
 
@@ -37,18 +37,14 @@ const Section = styled.section.attrs({
 })``;
 
 const Title = styled.h2.attrs({
-  className: 'my-4 font-light uppercase',
+  className: 'text-2xl my-4 font-light uppercase',
 })`
   span {
     font-weight: 600;
   }
 `;
 
-const Sub = styled.p.attrs({ className: 'mx-auto' })`
-  @media (min-width: ${screens.lg}) {
-    max-width: 66%;
-  }
-`;
+const Sub = styled.p.attrs({ className: 'mx-auto lg:w-2/3' })``;
 
 const Grid = styled.div.attrs({
   className: 'mt-16',

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { screens } from '../../tailwind';
+import { screens } from 'tailwindcss/defaultTheme';
 
 export const Page = styled.main.attrs({ className: 'relative bg-white' })`
   margin-bottom: 12rem;

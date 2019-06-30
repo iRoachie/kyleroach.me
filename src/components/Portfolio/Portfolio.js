@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { screens } from '../../../tailwind';
 
 import { Container } from '../styles';
 import FolioSquare from './FolioSquare';
@@ -80,7 +79,7 @@ const Content = styled.section.attrs({
 })``;
 
 const Title = styled.h2.attrs({
-  className: 'my-4 font-light uppercase',
+  className: 'text-2xl my-4 font-light uppercase',
 })`
   span {
     font-weight: 600;
@@ -103,10 +102,6 @@ const FolioContent = styled.div.attrs({ className: 'folio-content' })`
   margin: 30px auto 0;
 `;
 
-const Sub = styled.p.attrs({ className: 'mx-auto' })`
-  @media (min-width: ${screens.lg}) {
-    max-width: 66%;
-  }
-`;
+const Sub = styled.p.attrs({ className: 'mx-auto lg:w-2/3' })``;
 
 export default Portfolio;

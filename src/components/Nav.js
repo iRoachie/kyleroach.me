@@ -58,16 +58,13 @@ const NavItem = styled.li.attrs({
 })``;
 
 const NavLink = styled(ScrollLink).attrs({
-  className: 'uppercase text-sm font-bold font-heading cursor-pointer',
+  className:
+    'uppercase text-sm font-bold font-heading cursor-pointer text-primary hover:text-white',
   smooth: true,
   duration: 300,
+  href: '#',
 })`
   transition: color 300ms ease-in-out;
-  color: var(--primary);
-
-  &:hover {
-    color: #fff;
-  }
 `;
 
 export default Nav;

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { screens } from '../../tailwind';
 import { Link } from 'react-scroll';
 
 import { Container } from './styles';
@@ -20,7 +19,7 @@ const Hero = () => (
         Creating. Learning. Ready
       </Blurb>
 
-      <Button to="about" smooth duration={300}>
+      <Button href="#" to="about" smooth duration={300}>
         learn more
       </Button>
     </Content>
@@ -50,24 +49,14 @@ const Section = styled.section.attrs({
 `;
 
 const Content = styled(Container).attrs({
-  className: 'flex flex-col items-end z-20',
-})`
-  margin-right: 0;
-
-  @media (min-width: ${screens.md}) {
-    margin-right: auto;
-  }
-`;
+  className: 'flex flex-col items-end z-20 mr-0 md:mr-auto',
+})``;
 
 const Cover = styled.div.attrs({
-  className: 'absolute w-full h-full pin-t pin-l z-10',
+  className: 'absolute w-full h-full top-0 left-0 z-10 xl:opacity-0',
 })`
   background-color: rgba(51, 51, 51, 0.2);
   transition: 500ms ease-in-out;
-
-  @media (min-width: ${screens.xl}) {
-    opacity: 0;
-  }
 `;
 
 const Pre = styled.h4.attrs({
@@ -91,18 +80,12 @@ const Blurb = styled.p.attrs({
 
 const Button = styled(Link).attrs({
   className:
-    'uppercase text-white font-heading text-xs font-bold cursor-pointer',
+    'uppercase text-white font-heading text-xs font-bold cursor-pointer hover:bg-primary hover:border-primary',
 })`
   padding: 10px 20px;
   letter-spacing: 2px;
   border: 2px solid #fff;
   transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
-
-  &:hover {
-    background: #000;
-    background-color: var(--primary);
-    border-color: var(--primary);
-  }
 `;
 
 export default Hero;

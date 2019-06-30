@@ -57,7 +57,7 @@ const Portrait = styled.picture`
 const Content = styled.div.attrs({ className: 'flex-1' })``;
 
 const Title = styled.h2.attrs({
-  className: 'mt-12 sm:mt-0 md:mt-12 font-light uppercase',
+  className: 'text-2xl mt-12 sm:mt-0 md:mt-12 font-light uppercase',
 })`
   &:after {
     content: '';
