@@ -12,8 +12,9 @@ export const Page = styled.main.attrs({ className: 'relative bg-white' })`
 export const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
 
   @media (min-width: ${screens.md}) {
     & {
@@ -30,7 +31,7 @@ export const Container = styled.div`
   @media (min-width: ${screens.xl}) {
     & {
       width: 1000px;
-      max-width: calc(100% - 30px);
+      max-width: 100%;
     }
   }
 `;

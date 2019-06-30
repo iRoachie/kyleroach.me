@@ -7,6 +7,7 @@
   "dependencies": {
     "dotenv": "^8.0.0",
     "gatsby": "^2.11.6",
+    "gatsby-background-image": "^0.7.4",
     "gatsby-image": "^2.2.3",
     "gatsby-plugin-google-analytics": "^2.1.1",
     "gatsby-plugin-google-fonts": "^1.0.1",
@@ -20,6 +21,7 @@
     "gatsby-source-filesystem": "^2.1.0",
     "gatsby-source-graphql": "^2.1.0",
     "gatsby-transformer-sharp": "^2.2.0",
+    "intersection-observer": "^0.7.0",
     "isotope-layout": "^3.0.6",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",

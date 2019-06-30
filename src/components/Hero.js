@@ -1,55 +1,74 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
+import BackgroundImage from 'gatsby-background-image';
+import { screens } from 'tailwindcss/defaultTheme';
 
 import { Container } from './styles';
-import image_jpg from '../images/hero.jpg';
-import image_webp from '../images/hero.webp';
 
-const Hero = () => (
-  <Section>
-    <Cover />
+const Hero = () => {
+  const data = useStaticQuery(graphql`
+    {
+      file(relativePath: { eq: "hero.jpg" }) {
+        childImageSharp {
+          fluid(quality: 100, maxHeight: 420) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
 
-    <Content>
-      <Pre>Hey There! I'm</Pre>
-      <Name>Kyle Roach</Name>
-      <Blurb>
-        Enthusiastic Developer with a Hint of Design
-        <br />
-        Creating. Learning. Ready
-      </Blurb>
+  return (
+    <Section
+      fluid={data.file.childImageSharp.fluid}
+      style={{
+        backgroundPosition: 'right center',
+      }}
+      Tag="section"
+    >
+      <Cover />
 
-      <Button href="#" to="about" smooth duration={300}>
-        learn more
-      </Button>
-    </Content>
-  </Section>
-);
+      <Content>
+        <Pre>Hey There! I'm</Pre>
+        <Name>Kyle Roach</Name>
+        <Blurb>
+          Enthusiastic Developer with a Hint of Design
+          <br />
+          Creating. Learning. Ready
+        </Blurb>
 
-const Section = styled.section.attrs({
-  className: 'w-full z-0 relative flex justify-end text-white',
+        <Button href="#" to="about" smooth duration={300}>
+          learn more
+        </Button>
+      </Content>
+    </Section>
+  );
+};
+
+const Section = styled(BackgroundImage).attrs({
+  className: 'w-full z-0 flex justify-end text-white',
 })`
-  background-size: cover;
   margin-top: -105px;
   padding: 5rem 0 2.5rem;
-  background-position: right center;
   filter: saturate(20%) contrast(180%);
+
+  #stacking-context-reset {
+    margin-right: 0;
+
+    @media (min-width: ${screens.md}) {
+      margin: 0 auto;
+    }
+  }
 
   @media (min-width: 350px) {
     margin-top: -85px;
   }
-
-  .webp & {
-    background-image: url(${image_webp});
-  }
-
-  .no-webp & {
-    background-image: url(${image_jpg});
-  }
 `;
 
 const Content = styled(Container).attrs({
-  className: 'flex flex-col items-end z-20 mr-0 md:mr-auto',
+  className: 'flex flex-col items-end z-20',
 })``;
 
 const Cover = styled.div.attrs({

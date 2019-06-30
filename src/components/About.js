@@ -1,44 +1,58 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 import { Container } from './styles';
-import portraitPng from '../images/portrait.png';
-import portraitWebp from '../images/portrait.webp';
 
-const About = () => (
-  <Section>
-    <AboutContainer>
-      <PortaitContent>
-        <Portrait>
-          <source srcSet={portraitWebp} type="image/webp" />
-          <img src={portraitPng} alt="Kyle Roach" />
-        </Portrait>
-      </PortaitContent>
+const About = () => {
+  const data = useStaticQuery(graphql`
+    {
+      file(relativePath: { eq: "portrait.png" }) {
+        childImageSharp {
+          fixed(quality: 100, width: 360) {
+            ...GatsbyImageSharpFixed_withWebp
+          }
+        }
+      }
+    }
+  `);
 
-      <Content>
-        <Title>
-          About <span>Kyle</span>
-        </Title>
+  return (
+    <Section>
+      <AboutContainer>
+        <PortraitContent>
+          <Portrait
+            alt="Kyle Roach"
+            fixed={data.file.childImageSharp.fixed}
+          ></Portrait>
+        </PortraitContent>
 
-        <p>
-          A Web and React Native Developer whose always interested in creating
-          new things using the latest technologies on the web.
-        </p>
+        <Content>
+          <Title>
+            About <span>Kyle</span>
+          </Title>
 
-        <p>
-          My love for technology and design has led me into crafting user
-          interfaces for web and mobile applications. The fields of web and
-          mobile development are rapidly changing, and being a fast learner
-          enables me to stay ahead of the curb.
-        </p>
+          <p>
+            A Web and React Native Developer whose always interested in creating
+            new things using the latest technologies on the web.
+          </p>
 
-        <p className="my-8">
-          <strong>Design interfaces. Develop experiences</strong>
-        </p>
-      </Content>
-    </AboutContainer>
-  </Section>
-);
+          <p>
+            My love for technology and design has led me into crafting user
+            interfaces for web and mobile applications. The fields of web and
+            mobile development are rapidly changing, and being a fast learner
+            enables me to stay ahead of the curb.
+          </p>
+
+          <p className="my-8">
+            <strong>Design interfaces. Develop experiences</strong>
+          </p>
+        </Content>
+      </AboutContainer>
+    </Section>
+  );
+};
 
 const Section = styled.section.attrs({ className: 'pt-16 pb-4' })``;
 
@@ -46,11 +60,11 @@ const AboutContainer = styled(Container).attrs({
   className: 'md:flex',
 })``;
 
-const PortaitContent = styled.div.attrs({
+const PortraitContent = styled.div.attrs({
   className: 'flex flex-1 justify-center mb-16',
 })``;
 
-const Portrait = styled.picture`
+const Portrait = styled(Img)`
   max-width: 80%;
 `;
 
