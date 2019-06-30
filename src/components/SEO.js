@@ -21,15 +21,6 @@ function SEO({ description, lang, meta, keywords, title }) {
                 ? data.site.siteMetadata.title
                 : `%s | ${data.site.siteMetadata.title}`
             }
-            link={[
-              {
-                href:
-                  'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Raleway:300,600,700',
-                rel: 'stylesheet',
-                async: true,
-                defer: true,
-              },
-            ]}
             script={[
               {
                 src: withPrefix('modernizr-custom.js'),

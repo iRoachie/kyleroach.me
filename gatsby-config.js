@@ -35,8 +35,6 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-80535053-3',
-        // Puts tracking script in the head instead of the body
-        head: false,
       },
     },
     {
@@ -60,7 +58,23 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
     },
-
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        develop: false, // Enable while using `gatsby develop`
+        tailwind: true, // Enable tailwindcss support
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Raleway\:300,600,700`,
+          `Open Sans\:300,400,600`, // you can also specify font weights and styles
+        ],
+        display: 'swap',
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
