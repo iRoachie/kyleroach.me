@@ -7,7 +7,7 @@ import FolioSquare from './FolioSquare';
 class Portfolio extends React.Component {
   state = {
     active: 'all',
-    titles: ['all', 'web', 'mobile'],
+    titles: ['all', 'web', 'mobile', 'api'],
   };
 
   componentDidMount() {
