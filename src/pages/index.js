@@ -22,7 +22,7 @@ const IndexPage = ({ data }) => (
   <Layout>
     <SEO
       title="Home"
-      keywords={[`kyle`, `roach`, `barbados`, `developer`, `gatsby`, `react`]}
+      keywords={['kyle', 'roach', 'barbados', 'developer', 'gatsby', 'react']}
     />
 
     <Page>

@@ -1,51 +1,52 @@
 require('dotenv').config({
-  path: `.env`,
+  path: '.env',
 });
 
 module.exports = {
   siteMetadata: {
-    title: `Kyle Roach`,
-    description: `Enthusiastic developer with knack for interface design. Creating. Learning. Ready`,
-    author: `Kyle Roach`,
+    title: 'Kyle Roach',
+    description:
+      'Enthusiastic developer with knack for interface design. Creating. Learning. Ready',
+    author: 'Kyle Roach',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
+        name: 'images',
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `Kyle Roach`,
-        short_name: `Kyle Roach`,
-        start_url: `/`,
-        background_color: `#fff`,
-        theme_color: `#333`,
-        display: `standalone`,
-        icon: `src/images/logo--small.png`,
+        name: 'Kyle Roach',
+        short_name: 'Kyle Roach',
+        start_url: '/',
+        background_color: '#fff',
+        theme_color: '#333',
+        display: 'standalone',
+        icon: 'src/images/logo--small.png',
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-80535053-3',
       },
     },
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: `8qozlkro5dkr`,
+        spaceId: '8qozlkro5dkr',
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {
-      resolve: `gatsby-source-graphql`,
+      resolve: 'gatsby-source-graphql',
       options: {
         typeName: 'GitHub',
         fieldName: 'github',
@@ -56,7 +57,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-styled-components`,
+      resolve: 'gatsby-plugin-styled-components',
     },
     {
       resolve: 'gatsby-plugin-purgecss',
@@ -66,11 +67,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
-          `Raleway\:300,600,700`,
-          `Open Sans\:300,400,600`, // you can also specify font weights and styles
+          'Raleway:300,600,700',
+          'Open Sans:300,400,600', // you can also specify font weights and styles
         ],
         display: 'swap',
       },

@@ -22,10 +22,7 @@ const About = () => {
     <Section>
       <AboutContainer>
         <PortraitContent>
-          <Portrait
-            alt="Kyle Roach"
-            fixed={data.file.childImageSharp.fixed}
-          ></Portrait>
+          <Portrait alt="Kyle Roach" fixed={data.file.childImageSharp.fixed} />
         </PortraitContent>
 
         <Content>
