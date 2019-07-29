@@ -47,11 +47,24 @@
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-plugin-styled-components": "^1.10.4",
     "eslint": "^6.1.0",
+    "husky": ">=1",
+    "lint-staged": ">=8",
     "postcss-cli": "^6.1.2",
     "tailwindcss": "^1.0.4"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/iRoachie/kyleroach.me.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
