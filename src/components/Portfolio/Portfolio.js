@@ -33,7 +33,7 @@ const Portfolio = () => {
             id
             title
             thumbnail {
-              fluid(maxWidth: 300, maxHeight: 300) {
+              fluid(maxWidth: 300, maxHeight: 300, quality: 100) {
                 ...GatsbyContentfulFluid
               }
             }
