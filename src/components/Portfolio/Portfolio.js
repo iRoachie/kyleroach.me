@@ -1,78 +1,95 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
+import { useStaticQuery, graphql } from 'gatsby';
+import Isotope from 'isotope-layout/js/isotope';
 
 import { Container } from '../styles';
 import FolioSquare from './FolioSquare';
 
-class Portfolio extends React.Component {
-  state = {
-    active: 'all',
-    titles: ['all', 'web', 'mobile', 'api'],
-  };
+const titles = ['all', 'web', 'mobile', 'api'];
 
-  componentDidMount() {
-    import('isotope-layout/js/isotope').then(Isotope => {
-      const grid = document.querySelector('.folio-content');
+const Portfolio = () => {
+  const [active, setActive] = useState('all');
+  const grid = useRef();
 
-      this.grid = new Isotope.default(grid, {
-        itemSelector: '.folio-square',
-        getSortData: {
-          category: '[data-category]',
-        },
-        layoutMode: 'masonry',
-        masonry: {
-          isFitWidth: true,
-        },
-      });
+  useEffect(() => {
+    grid.current = new Isotope(document.querySelector('.folio-content'), {
+      itemSelector: '.folio-square',
+      getSortData: {
+        category: '[data-category]',
+      },
+      layoutMode: 'masonry',
+      masonry: {
+        isFitWidth: true,
+      },
     });
-  }
+  }, []);
 
-  makeActive = a => {
+  const data = useStaticQuery(graphql`
+    {
+      allContentfulProject {
+        edges {
+          node {
+            id
+            title
+            thumbnail {
+              fluid(maxWidth: 300, maxHeight: 300) {
+                ...GatsbyContentfulFluid
+              }
+            }
+            platforms {
+              id
+              name
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const makeActive = a => {
     const filter = a === 'all' ? '*' : `.${a}`;
 
-    this.setState({ active: a });
-    this.grid.arrange({ filter });
+    setActive(a);
+    grid.current.arrange({ filter });
   };
 
-  render() {
-    const { titles, active } = this.state;
-    const { projects } = this.props;
+  console.log(data);
 
-    return (
-      <Content>
-        <Container>
-          <Title>
-            My <span>Portfolio</span>
-          </Title>
+  return (
+    <Content>
+      <Container>
+        <Title>
+          My <span>Portfolio</span>
+        </Title>
 
-          <Sub>
-            Each project brings its own challenges and expectations. Both on the
-            web and on mobile, I've been instrumental in helping clients solve
-            their problems.
-          </Sub>
+        <Sub>
+          Each project brings its own challenges and expectations. Both on the
+          web and on mobile, I've been instrumental in helping clients solve
+          their problems.
+        </Sub>
 
-          <FolioTitles>
-            {titles.map(a => (
-              <FolioTitle
-                active={active === a}
-                key={a}
-                onClick={() => this.makeActive(a)}
-              >
-                {a}
-              </FolioTitle>
-            ))}
-          </FolioTitles>
+        <FolioTitles>
+          {titles.map(a => (
+            <FolioTitle
+              active={active === a}
+              key={a}
+              onClick={() => makeActive(a)}
+            >
+              {a}
+            </FolioTitle>
+          ))}
+        </FolioTitles>
 
-          <FolioContent>
-            {projects.map(({ node }) => (
-              <FolioSquare key={node.id} project={node} />
-            ))}
-          </FolioContent>
-        </Container>
-      </Content>
-    );
-  }
-}
+        <FolioContent>
+          {data.allContentfulProject.edges.map(({ node }) => (
+            <FolioSquare key={node.id} project={node} />
+          ))}
+        </FolioContent>
+      </Container>
+    </Content>
+  );
+};
 
 const Content = styled.section.attrs({
   className: 'pt-8 pb-16 text-center text-white bg-primary',

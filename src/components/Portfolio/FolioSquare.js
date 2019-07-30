@@ -6,7 +6,9 @@ import styled from 'styled-components';
 const FolioSquare = ({ project }) => (
   <Container
     to="/"
-    className={`folio-square ${project.tags.map(a => a.name).join(' ')}`}
+    className={`folio-square ${project.platforms
+      .map(a => a.name.toLowerCase())
+      .join(' ')}`}
   >
     <Img sizes={project.thumbnail.fluid} alt={project.title} />
 
@@ -15,8 +17,8 @@ const FolioSquare = ({ project }) => (
         <Title>{project.title}</Title>
 
         <div>
-          {project.tags.map(a => (
-            <Tag key={a.id}>{a.name}</Tag>
+          {project.platforms.map(a => (
+            <Platform key={a.id}>{a.name}</Platform>
           ))}
         </div>
       </Content>
@@ -73,7 +75,7 @@ const Title = styled.h3.attrs({
   className: 'text-white font-semibold mb-2 text-xl',
 })``;
 
-const Tag = styled.span.attrs({
+const Platform = styled.span.attrs({
   className:
     'bg-primary text-white px-2 py-1 inline-block mx-1 rounded uppercase text-xs font-heading font-bold',
 })``;

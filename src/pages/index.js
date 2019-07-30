@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => (
 
       <Skills />
 
-      <Portfolio projects={data.allContentfulProject.edges} />
+      <Portfolio />
 
       <OSS repos={Object.values(data.github)} />
     </Page>
@@ -43,23 +43,6 @@ const IndexPage = ({ data }) => (
 
 export const pageQuery = graphql`
   {
-    allContentfulProject {
-      edges {
-        node {
-          id
-          title
-          thumbnail {
-            fluid(maxWidth: 300, maxHeight: 300) {
-              ...GatsbyContentfulFluid
-            }
-          }
-          tags {
-            id
-            name
-          }
-        }
-      }
-    }
     github {
       a: repository(
         owner: "react-native-training"
