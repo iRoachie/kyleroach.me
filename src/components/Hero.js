@@ -1,7 +1,6 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 import styled from 'styled-components';
-import { Link } from 'react-scroll';
 import BackgroundImage from 'gatsby-background-image';
 import { screens } from 'tailwindcss/defaultTheme';
 
@@ -39,9 +38,7 @@ const Hero = () => {
           Creating. Learning. Ready
         </Blurb>
 
-        <Button href="#" to="about" smooth duration={300}>
-          learn more
-        </Button>
+        <Button to="/#about">learn more</Button>
       </Content>
     </Section>
   );

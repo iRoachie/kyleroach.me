@@ -19,7 +19,7 @@ const About = () => {
   `);
 
   return (
-    <Section>
+    <Section id="about">
       <AboutContainer>
         <PortraitContent>
           <Portrait alt="Kyle Roach" fixed={data.file.childImageSharp.fixed} />

@@ -6,7 +6,7 @@ import { Container } from '../styles';
 import Skill from './Skill';
 
 const Skills = () => (
-  <Section>
+  <Section id="skills">
     <Container>
       <Title>
         My <span>Skills</span>

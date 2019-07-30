@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { Link as ScrollLink } from 'react-scroll';
 
 import { Container } from './styles';
 
-const Nav = () => (
+const Nav = ({ mode = 'dark' }) => (
   <Section>
     <Container className="mx-auto py-4 flex justify-between items-center">
       <Link to="/">
@@ -41,19 +40,19 @@ const Nav = () => (
 
       <Menu>
         <NavItem>
-          <NavLink to="top">Home</NavLink>
+          <NavLink mode={mode} to="/#about">
+            About
+          </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="about">About</NavLink>
+          <NavLink mode={mode} to="/#skills">
+            Skills
+          </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="skills">Skills</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink to="projects">Projects</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink to="top">Contact</NavLink>
+          <NavLink mode={mode} to="/projects">
+            Projects
+          </NavLink>
         </NavItem>
       </Menu>
     </Container>
@@ -72,14 +71,16 @@ const NavItem = styled.li.attrs({
   className: 'inline-block ml-4',
 })``;
 
-const NavLink = styled(ScrollLink).attrs({
-  className:
-    'uppercase text-sm font-bold font-heading cursor-pointer text-primary hover:text-white',
-  smooth: true,
-  duration: 300,
-  href: '#',
-})`
-  transition: color 300ms ease-in-out;
+const NavLink = styled(Link).attrs(({ mode, ...rest }) => ({
+  className: `uppercase text-sm font-bold font-heading cursor-pointer  ${
+    mode === 'light'
+      ? 'hover:text-blue-700'
+      : 'text-white opacity-75 hover:opacity-100'
+  }`,
+  activeClassName: 'text-blue-700',
+}))`
+  color: var(--primary);
+  transition: 300ms ease-in-out;
 `;
 
 export default Nav;

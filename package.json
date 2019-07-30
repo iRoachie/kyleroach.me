@@ -27,7 +27,6 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
-    "react-scroll": "^1.7.12",
     "styled-components": "^4.3.2",
     "thousands": "^1.0.1"
   },
@@ -46,11 +45,11 @@
   "devDependencies": {
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-plugin-styled-components": "^1.10.4",
-    "eslint": "^6.1.0",
+    "eslint": "^5.16.0",
     "husky": ">=1",
     "lint-staged": ">=8",
     "postcss-cli": "^6.1.2",
-    "tailwindcss": "^1.0.4"
+    "tailwindcss": "^1.0.5"
   },
   "repository": {
     "type": "git",

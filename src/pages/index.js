@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Element } from 'react-scroll';
 
 import '../index.css';
 import '../main.css';
@@ -26,22 +25,14 @@ const IndexPage = ({ data }) => (
     />
 
     <Page>
-      <Element name="top">
-        <Nav />
-        <Hero />
-      </Element>
+      <Nav />
+      <Hero />
 
-      <Element name="about">
-        <About />
-      </Element>
+      <About />
 
-      <Element name="skills">
-        <Skills />
-      </Element>
+      <Skills />
 
-      <Element name="projects">
-        <Portfolio projects={data.allContentfulProject.edges} />
-      </Element>
+      <Portfolio projects={data.allContentfulProject.edges} />
 
       <OSS repos={Object.values(data.github)} />
     </Page>
