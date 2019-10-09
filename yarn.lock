@@ -1238,6 +1238,11 @@
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.2.tgz#0e670ea254d559241b6eeb3894f8754991e73220"
   integrity sha512-ui3WwXmjTaY73fOQ3/m3nnajU/Orhi6cEu5rzX+BrAAJxa3eITXZ5ch9suPqtM03OWhAHhPSyBGCN4UKoxO20Q==
 
+"@types/isotope-layout@^3.0.8":
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/@types/isotope-layout/-/isotope-layout-3.0.8.tgz#ae8acc9d457482da8c77653ed213adc90a658476"
+  integrity sha512-hJitV6MQnZ98GBiYkh4PA7hvXVZJoqehMLVsmf0v/xCkv4O8xaJVPD7pjCFXWswDQ2jB7a3dUCGzWZxlLtjINg==
+
 "@types/json-schema@^7.0.3":
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.3.tgz#bdfd69d61e464dcc81b25159c270d75a73c1a636"

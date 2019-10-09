@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import Isotope from 'isotope-layout/js/isotope';
 
 import { Container } from '../styles';
 import FolioSquare from './FolioSquare';
@@ -13,15 +12,24 @@ const Portfolio = () => {
   const grid = useRef();
 
   useEffect(() => {
-    grid.current = new Isotope(document.querySelector('.folio-content'), {
-      itemSelector: '.folio-square',
-      getSortData: {
-        category: '[data-category]',
-      },
-      layoutMode: 'masonry',
-      masonry: {
-        isFitWidth: true,
-      },
+    /*
+     * We have to do this because this package uses window,
+     * and it will fail in gatsby build.
+     */
+    import('isotope-layout').then(Isotope => {
+      grid.current = new Isotope.default(
+        document.querySelector('.folio-content'),
+        {
+          itemSelector: '.folio-square',
+          getSortData: {
+            category: '[data-category]',
+          },
+          layoutMode: 'masonry',
+          masonry: {
+            isFitWidth: true,
+          },
+        }
+      );
     });
   }, []);
 

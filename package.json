@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^0.0.5",
+    "@types/isotope-layout": "^3.0.8",
     "babel-plugin-styled-components": "^1.10.4",
     "eslint": "^5.16.0",
     "husky": ">=1",
