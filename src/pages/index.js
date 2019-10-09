@@ -45,7 +45,7 @@ export const pageQuery = graphql`
   {
     github {
       a: repository(
-        owner: "react-native-training"
+        owner: "react-native-elements"
         name: "react-native-elements"
       ) {
         ...Info
