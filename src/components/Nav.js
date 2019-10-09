@@ -49,11 +49,11 @@ const Nav = ({ mode = 'dark' }) => (
             Skills
           </NavLink>
         </NavItem>
-        <NavItem>
+        {/* <NavItem>
           <NavLink mode={mode} to="/projects">
             Projects
           </NavLink>
-        </NavItem>
+        </NavItem> */}
       </Menu>
     </Container>
   </Section>
